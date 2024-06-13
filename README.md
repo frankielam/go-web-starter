@@ -6,5 +6,6 @@ Go web starter
 * http 
 ```
 git checkout http
+go run main.go
 curl http://127.0.0.1:8080/
 ```
