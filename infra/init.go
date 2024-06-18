@@ -1,6 +1,7 @@
 package infra
 
 import (
+	"gowebstarter/infra/cache"
 	"gowebstarter/infra/config"
 	"gowebstarter/infra/db"
 	initLog "gowebstarter/infra/log"
@@ -18,6 +19,7 @@ func Init() {
 	config.GetConf()
 	initLog.Init() // log initial
 	db.GetDB()
+	cache.GetRedisClient()
 }
 
 func initTimeZone() {

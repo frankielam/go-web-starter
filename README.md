@@ -33,3 +33,9 @@ go get gorm.io/driver/postgres
 // If using MySQL Database
 // go get gorm.io/driver/mysql
 ```
+
+* gin-redis
+```
+git checkout gin-redis
+go get github.com/redis/go-redis/v9
+```
