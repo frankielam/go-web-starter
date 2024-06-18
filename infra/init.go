@@ -2,6 +2,7 @@ package infra
 
 import (
 	"gowebstarter/infra/config"
+	initLog "gowebstarter/infra/log"
 	"log"
 	"sync"
 	"time"
@@ -12,8 +13,10 @@ const TimeZone = "Asia/Shanghai"
 var timezoneOnce sync.Once
 
 func Init() {
-	initTimeZone()
+	initTimeZone() // timezone initial
+
 	config.GetConf()
+	initLog.Init() // log initial
 }
 
 func initTimeZone() {

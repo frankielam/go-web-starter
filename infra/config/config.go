@@ -2,6 +2,7 @@ package config
 
 import (
 	"log"
+	"log/slog"
 	"os"
 	"strings"
 	"sync"
@@ -18,6 +19,14 @@ type AppConfig struct {
 	Server struct {
 		Host string
 		Port string
+		Mode string
+	}
+	Log struct {
+		Filename   string
+		MaxSize    int `mapstructure:"max_size"`
+		MaxBackups int `mapstructure:"max_backups"`
+		MaxAge     int `mapstructure:"max_age"`
+		Compress   bool
 	}
 }
 
@@ -39,6 +48,7 @@ func GetConf() *AppConfig {
 		}
 		config = initConfig
 		log.Println("Config loaded")
+		slog.Info("Config loaded")
 	})
 	return config
 }
