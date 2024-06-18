@@ -24,3 +24,12 @@ git checkout gin-adapter
 go get github.com/spf13/viper
 go get gopkg.in/natefinch/lumberjack.v2
 ```
+
+* gin-gorm
+```
+git checkout gin-gorm
+go get gorm.io/gorm
+go get gorm.io/driver/postgres
+// If using MySQL Database
+// go get gorm.io/driver/mysql
+```

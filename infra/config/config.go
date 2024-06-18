@@ -28,6 +28,9 @@ type AppConfig struct {
 		MaxAge     int `mapstructure:"max_age"`
 		Compress   bool
 	}
+	Db struct {
+		Dsn string
+	}
 }
 
 func GetConf() *AppConfig {

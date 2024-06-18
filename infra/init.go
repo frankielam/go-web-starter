@@ -2,6 +2,7 @@ package infra
 
 import (
 	"gowebstarter/infra/config"
+	"gowebstarter/infra/db"
 	initLog "gowebstarter/infra/log"
 	"log"
 	"sync"
@@ -14,9 +15,9 @@ var timezoneOnce sync.Once
 
 func Init() {
 	initTimeZone() // timezone initial
-
 	config.GetConf()
 	initLog.Init() // log initial
+	db.GetDB()
 }
 
 func initTimeZone() {
