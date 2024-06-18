@@ -3,11 +3,13 @@ package main
 import (
 	"fmt"
 	"gowebstarter/adapter"
+	"gowebstarter/infra"
+	"gowebstarter/infra/config"
 )
 
 func main() {
+	infra.Init()
 	r := adapter.InitGin()
-	fmt.Println("Listening on port 8080...")
-	r.Run(":8080")
-
+	address := fmt.Sprintf("%s:%s", config.GetConf().Server.Host, config.GetConf().Server.Port)
+	r.Run(address)
 }
