@@ -12,6 +12,14 @@ db:
   dsn: postgres://user:pass@127.0.0.1:5432/db?sslmode=disable
   # dsn: root:12345@tcp(127.0.0.1:3306)/db?charset=utf8mb4&parseTime=True&loc=Local
 redis:
-  addr: 127.0.0.1:6479
+  addr: 127.0.0.1:6379
   password:
-  db: 0
+  db: 0  
+auth:
+  jwt:
+    secret: "ABCD1234-ABCD-1234-ABCD-ABCD1234ABCD"
+    issuer: "gowebstarter"
+    algorithm: "HS256"
+    timeout_sec: 86400
+    max_refresh_sec: 86400
+    realm: gowebstarter

@@ -36,6 +36,16 @@ type AppConfig struct {
 		Password string
 		DB       int `mapstructure:"db"`
 	}
+	Auth struct {
+		JWT struct {
+			Secret     string
+			Issuer     string
+			Algorithm  string
+			Timeout    int `mapstructure:"timeout_sec"`
+			MaxRefresh int `mapstructure:"max_refresh_sec"`
+			Realm      string
+		}
+	}
 }
 
 func GetConf() *AppConfig {
